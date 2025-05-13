@@ -2,11 +2,9 @@ package com.surf.app.Models;
 
 import java.sql.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.surf.app.Enum.SurfBreak;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class SurfSpots {
+public class SurfSpot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
@@ -27,7 +25,7 @@ public class SurfSpots {
     private Date seasonStart;
     private Date seasonEnd;
 
-    public SurfSpots(int Id, String name, String adress, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd) {
+    public SurfSpot(int Id, String name, String adress, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd) {
         this.Id = Id;
         this.name = name;
         this.difficultyLevel = difficultyLevel;
