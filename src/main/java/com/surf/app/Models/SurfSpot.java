@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class SurfSpot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private long Id;
     private String name;
     private String adress;
     private int difficultyLevel;
@@ -24,10 +24,15 @@ public class SurfSpot {
     private String photoUrl;
     private Date seasonStart;
     private Date seasonEnd;
+    
+    public SurfSpot() {
+        // Constructeur par défaut requis par JPA
+    }
 
-    public SurfSpot(int Id, String name, String adress, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd) {
+    public SurfSpot(long Id, String name, String adress, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd) {
         this.Id = Id;
         this.name = name;
+        this.adress= adress;
         this.difficultyLevel = difficultyLevel;
         this.surfBreak = surfBreak;
         this.photoUrl = photoUrl;
@@ -35,11 +40,11 @@ public class SurfSpot {
         this.seasonEnd = seasonEnd;
     }
 
-    public int getId() {
+    public long getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         Id = id;
     }
 
