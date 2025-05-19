@@ -373,3 +373,307 @@ VALUES (
     '2025-05-01',
     1
 ) [42000-232]
+2025-05-16 10:30:50.739552+02:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-232]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:291)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1038)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 50 more
+2025-05-16 10:40:17.042237+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Teahupo\\'o, Tahiti, Polynésie française', 5, 'Teahupo[*]\\'o', 'https://tahititourisme.fr/fr-fr/iles/tahiti/surf-a-teahupoo/', '2025-10-31', '2025-05-01', -17.8456, -149.2670 )"
+Syntax error in SQL statement "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Teahupo\\'o, Tahiti, Polynésie française', 5, 'Teahupo[*]\\'o', 'https://tahititourisme.fr/fr-fr/iles/tahiti/surf-a-teahupoo/', '2025-10-31', '2025-05-01', -17.8456, -149.2670 )"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES 
+( 'Teahupo\'o, Tahiti, Polynésie française', 5, 'Teahupo\'o', 'https://tahititourisme.fr/fr-fr/iles/tahiti/surf-a-teahupoo/', '2025-10-31', '2025-05-01', -17.8456, -149.2670 ) [42000-232]
+2025-05-16 10:46:24.781684+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Ribeira d\\'Ilhas, Ericeira, Portugal', 4, 'Ribeira d[*]\\'Ilhas', 'https://www.visitportugal.com/en/content/ericeira-world-surfing-reserve', '2025-10-31', '2025-05-01', 38.9876, -9.4203 )"
+Syntax error in SQL statement "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Ribeira d\\'Ilhas, Ericeira, Portugal', 4, 'Ribeira d[*]\\'Ilhas', 'https://www.visitportugal.com/en/content/ericeira-world-surfing-reserve', '2025-10-31', '2025-05-01', 38.9876, -9.4203 )"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES 
+( 'Ribeira d\'Ilhas, Ericeira, Portugal', 4, 'Ribeira d\'Ilhas', 'https://www.visitportugal.com/en/content/ericeira-world-surfing-reserve', '2025-10-31', '2025-05-01', 38.9876, -9.4203 ) [42000-232]
+2025-05-16 10:46:24.794868+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Plage d\\'[*]Anchor Point, Taghazout, Maroc', 4, 'Anchor Point', 'https://visitmorocco.com/index.php/fr/ou-aller/littoral-mediterraneen/agadir', '2026-02-28', '2025-10-01', 30.5404, -9.7183 );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Plage de Moliets, 40660 Moliets-et-Maa, France', 2, 'Moliets', 'https://www.moliets.com/plage-de-moliets.html', '2025-10-31', '2025-05-01', 43.8558, -1.3567 )"; attendu "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Plage d\\'[*]Anchor Point, Taghazout, Maroc', 4, 'Anchor Point', 'https://visitmorocco.com/index.php/fr/ou-aller/littoral-mediterraneen/agadir', '2026-02-28', '2025-10-01', 30.5404, -9.7183 );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES \000d\000a( 'Plage de Moliets, 40660 Moliets-et-Maa, France', 2, 'Moliets', 'https://www.moliets.com/plage-de-moliets.html', '2025-10-31', '2025-05-01', 43.8558, -1.3567 )"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES 
+( 'Plage d\'Anchor Point, Taghazout, Maroc', 4, 'Anchor Point', 'https://visitmorocco.com/index.php/fr/ou-aller/littoral-mediterraneen/agadir', '2026-02-28', '2025-10-01', 30.5404, -9.7183 );
+
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE) VALUES 
+( 'Plage de Moliets, 40660 Moliets-et-Maa, France', 2, 'Moliets', 'https://www.moliets.com/plage-de-moliets.html', '2025-10-31', '2025-05-01', 43.8558, -1.3567 ) [42001-232]
+2025-05-16 10:58:46.415880+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+-- Spots initiaux
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Boulevard de la Dune, 40150 Hossegor, France', 4, 'Hossegor La Gravière', 'https://www.hossegor-tourisme.fr/decouvrir/les-plages/la-graviere/', '2025-11-30', '2025-09-01', 43.6611, -1.44 [22018-232]
+2025-05-16 10:58:46.425626+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Ehukai Beach Park, Pupukea, Hawaii 96712, USA', 5, 'Pipeline', 'https://www.gohawaii.com/islands/oahu/regions/north-shore/banzai-pipeline', '2026-02-28', '2025-11-01', 21.6656, -158.0522, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.427815+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Boulevard de la Plage, 33680 Lacanau, France', 2, 'Lacanau Océan', 'https://www.medoc-atlantique.com/destinations/lacanau/plages-lacanau/', '2025-10-31', '2025-05-01', 45.0017, -1.2016, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.430097+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Uluwatu, Pecatu, Bali, Indonésie', 4, 'Uluwatu', 'https://www.bali-indonesia.com/magazine/uluwatu-surf-beach.htm', '2025-09-30', '2025-04-01', -8.8291, 115.0849, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.431831+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Teahupo o, Tahiti, Polynésie française', 5, 'Teahupo o', 'https://tahititourisme.fr/fr-fr/iles/tahiti/surf-a-teahupoo/', '2025-10-31', '2025-05-01', -17.8456, -149.2670, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.433575+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Bells Beach, Victoria, Australie', 3, 'Bells Beach', 'https://www.visitvictoria.com/regions/great-ocean-road/things-to-do/outdoor-activities/surfing-and-windsurfing/bells-beach', '2026-02-28', '2025-12-01', -38.3704, 144.2782, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.435112+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'OUTER_BANKS' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'OUTER_BANKS' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Outer Banks, Caroline du Nord, USA', 3, 'Cape Hatteras', 'https://www.outerbanks.org/things-to-do/recreation/surfing/', '2025-11-30', '2025-08-01', 35.2269, -75.5388, 'OUTER_BANKS' ) [22018-232]
+2025-05-16 10:58:46.436464+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de la Côte des Basques, 64200 Biarritz, France', 2, 'Côte des Basques', 'https://tourisme.biarritz.fr/fr/plage/la-cote-des-basques', '2025-10-31', '2025-05-01', 43.4793, -1.5679, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.437866+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage du Minou, 29217 Plouzané, France', 3, 'Le Minou', 'https://www.brest-terres-oceanes.fr/destinations/plouzane/la-plage-du-minou/', '2025-12-31', '2025-09-01', 48.3372, -4.6177, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.439047+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Playa de Somo, 39140 Somo, Cantabrie, Espagne', 1, 'Playa de Somo', 'https://www.turismodecantabria.com/disfrutala/recursos-naturales/208-playa-de-somo', '2025-10-31', '2025-05-01', 43.4630, -3.7328, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.440366+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Praia do Norte, Nazaré, Portugal', 5, 'Nazaré', 'https://www.centerofportugal.com/poi/nazare-beach/', '2026-03-31', '2025-10-01', 39.6079, -9.0859, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.441597+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Jeffreys Bay, Eastern Cape, Afrique du Sud', 4, 'J-Bay', 'https://www.southafrica.net/gl/en/travel/article/catch-a-wave-at-jeffreys-bay', '2026-02-28', '2025-12-01', -34.0507, 24.9128, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.443241+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Guidel, 56520 Guidel, France', 2, 'Guidel', 'https://www.lorient-tourisme.fr/destination/les-villes/guidel/', '2025-10-31', '2025-04-01', 47.7833, -3.5333, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.444968+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+-- Spots additionnels
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Trestles, San Clemente, California 92672, USA', 3, 'Trestles', 'https://www.californiabeaches.com/beach/trestles-beach/', '2025-10-31', '2025-04-01', 33.3853, -11 [22018-232]
+2025-05-16 10:58:46.446396+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Malibu, Malibu, California 90265, USA', 2, 'Malibu Point', 'https://www.malibucity.org/861/Beaches-Parks', '2025-11-30', '2025-05-01', 34.0259, -118.7798, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.447583+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Supertubes, Jeffreys Bay, 6330, Afrique du Sud', 5, 'Supertubes', 'https://www.jeffreysbaytourism.org/see-and-do/adventure/surfing', '2026-01-31', '2025-12-01', -34.0522, 24.9311, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.448915+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Peniche, Estrada do Baleal, Peniche, Portugal', 3, 'Supertubos', 'https://www.visitportugal.com/en/content/surf-peniche', '2025-12-31', '2025-09-01', 39.3404, -9.3724, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.450206+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'The Pass, Cape Byron, New South Wales 2481, Australie', 2, 'Byron Bay', 'https://www.byron-bay.com/beach-guide/', '2026-02-28', '2025-11-01', -28.6282, 153.6311, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.451743+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Santa Catalina, Veraguas, Panama', 4, 'Santa Catalina', 'https://www.visitpanama.com/destinations/veraguas/', '2025-11-30', '2025-05-01', 7.6339, -81.2628, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.453783+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Praia de Arpoador, Rio de Janeiro, Brésil', 3, 'Arpoador', 'https://visit.rio/en/que_fazer/arpoador/', '2025-12-31', '2025-06-01', 8.0888, -43.1925, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.456031+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Playa Tamarindo, Guanacaste, Costa Rica', 2, 'Tamarindo', 'https://www.visitcostarica.com/en/costa-rica/things-to-do/beaches/tamarindo-beach', '2025-11-30', '2025-05-01', 10.3016, -85.8361, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.457922+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Mundaka, Mundaka, Pays Basque, Espagne', 4, 'Mundaka', 'https://turismo.euskadi.eus/en/beaches/beach-of-mundaka/aa30-12375/en/', '2025-12-31', '2025-09-01', 43.4073, -2.6981, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.467061+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Woolacombe, Devon, EX34 7DL, Royaume-Uni', 2, 'Woolacombe', 'https://www.visitdevon.co.uk/things-to-do/woolacombe-beach-p1559373', '2025-10-31', '2025-05-01', 51.1747, -4.2081, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.469209+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Bay of Plenty, Mount Maunganui, Nouvelle-Zélande', 3, 'Mount Maunganui', 'https://www.bayofplentynz.com/discover/mount-main-beach/', '2026-02-28', '2025-11-01', -37.6361, 176.1834, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.471256+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Popoyo, Tola, Rivas, Nicaragua', 4, 'Popoyo', 'https://visitnicaragua.us/beaches-in-the-south-pacific/', '2025-11-30', '2025-05-01', 11.4560, -86.0875, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.473192+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Kirra Beach, Gold Coast, Queensland, Australie', 3, 'Kirra', 'https://www.destinationgoldcoast.com/places-to-see/coolangatta/attractions/kirra-beach', '2026-02-28', '2025-11-01', -28.1665, 153.5332, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.475079+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de La Torche, 29120 Plomeur, France', 3, 'La Torche', 'https://www.bretagne-tipp.fr/surfen-in-frankreich/surfen-la-torche/', '2025-10-31', '2025-04-01', 47.8375, -4.3511, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.476336+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Playa Grande, Tamarindo, Guanacaste, Costa Rica', 2, 'Playa Grande', 'https://www.visitcostarica.com/en/costa-rica/things-to-do/beaches/playa-grande', '2025-11-30', '2025-05-01', 10.3442, -85.8466, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.477661+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Cloud Nine, General Luna, Siargao Island, Philippines', 5, 'Cloud Nine', 'https://philippines.travel/destinations/siargao', '2025-11-30', '2025-06-01', 9.7949, 126.1773, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.478910+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Waimea Bay, Oahu, Hawaii 96712, USA', 5, 'Waimea Bay', 'https://www.gohawaii.com/islands/oahu/regions/north-shore/waimea-bay', '2026-02-28', '2025-11-01', 21.6428, -158.0667, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.480053+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Crozon-Morgat, 29160 Crozon, France', 2, 'Morgat', 'https://www.crozon-tourisme.bzh/decouvrir/les-incontournables/la-plage-de-morgat/', '2025-09-30', '2025-05-01', 48.2271, -4.5007, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.481697+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Raglan, Waikato, Nouvelle-Zélande', 4, 'Raglan', 'https://www.hamiltonwaikato.com/destinations/raglan/surfing-in-raglan/', '2026-02-28', '2025-11-01', -37.8275, 174.8077, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.483310+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Capbreton, 40130 Capbreton, France', 3, 'Capbreton', 'https://www.capbreton-tourisme.com/fr/mes-experiences/activites-nautiques/le-surf-a-capbreton/', '2025-10-31', '2025-05-01', 43.6542, -1.4473, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.484993+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Ponta Delgada, São Miguel, Açores, Portugal', 3, 'Santa Barbara', 'https://www.visitportugal.com/en/content/santa-barbara-beach-sao-miguel', '2025-10-31', '2025-05-01', 37.8207, -25.5297, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.486876+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Ribeira d Ilhas, Ericeira, Portugal', 4, 'Ribeira d Ilhas', 'https://www.visitportugal.com/en/content/ericeira-world-surfing-reserve', '2025-10-31', '2025-05-01', 38.9876, -9.4203, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.488191+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Mentawai, Sumatra Occidental, Indonésie', 5, 'Mentawai Islands', 'https://indonesia.travel/gb/en/destinations/sumatra/mentawai-islands', '2025-09-30', '2025-04-01', -1.9926, 99.6125, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.489508+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Playa Los Cerritos, Baja California Sur, Mexique', 2, 'Cerritos Beach', 'https://www.visitmexico.com/en/baja-california-sur/todos-santos', '2025-11-30', '2025-05-01', 23.3302, -110.1767, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.490720+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Sandy Beach, Rincon, Puerto Rico', 3, 'Rincon', 'https://www.discoverpuertorico.com/regions/west/rincon', '2026-03-31', '2025-10-01', 18.3422, -67.2533, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.492110+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'POINT_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage d Anchor Point, Taghazout, Maroc', 4, 'Anchor Point', 'https://visitmorocco.com/index.php/fr/ou-aller/littoral-mediterraneen/agadir', '2026-02-28', '2025-10-01', 30.5404, -9.7183, 'POINT_BREAK' ) [22018-232]
+2025-05-16 10:58:46.493483+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Moliets, 40660 Moliets-et-Maa, France', 2, 'Moliets', 'https://www.moliets.com/plage-de-moliets.html', '2025-10-31', '2025-05-01', 43.8558, -1.3567, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.494770+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de La Lanzada, O Grove, Galice, Espagne', 2, 'La Lanzada', 'https://www.turismo.gal/recurso/-/detalle/3496/praia-a-lanzada?langId=en_US', '2025-09-30', '2025-05-01', 42.4338, -8.8755, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 10:58:46.496032+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'REEF_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Punta Rocas, Lima, Pérou', 4, 'Punta Rocas', 'https://www.peru.travel/en/what-to-do/surfing', '2026-03-31', '2025-11-01', -12.2664, -76.7990, 'REEF_BREAK' ) [22018-232]
+2025-05-16 10:58:46.497189+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"
+Data conversion error converting "'BEACH_BREAK' (SURF_SPOT: ""SURF_BREAK"" TINYINT)"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage du Médoc, 33930 Vendays-Montalivet, France', 1, 'Montalivet', 'https://www.medoc-atlantique.com/destinations/vendays-montalivet/plages-montalivet/', '2025-09-30', '2025-05-01', 45.3569, -1.1607, 'BEACH_BREAK' ) [22018-232]
+2025-05-16 11:04:45.032943+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Crozon-Morgat, 29160 Crozon, France', 2, 'Morgat', 'https://www.crozon-tourisme.bzh/decouvrir/les-incontournables/la-plage-de-morgat/', '2025-09-30', '2025-05-01', 48.2271, -4.5007, 2[*]' );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Raglan, Waikato, Nouvelle-Zélande', 4, 'Raglan', 'https://www.hamiltonwaikato.com/destinations/raglan/surfing-in-raglan/', '2026-02-28', '2025-11-01', -37.8275, 174.8077, 3 );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Capbreton, 40130 Capbreton, France', 3, 'Capbreton', 'https://www.capbreton-tourisme.com/fr/mes-experiences/activites-nautiques/le-surf-a-capbreton/', '2025-10-31', '2025-05-01', 43.6542, -1.4473, 2 )"; attendu "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Crozon-Morgat, 29160 Crozon, France', 2, 'Morgat', 'https://www.crozon-tourisme.bzh/decouvrir/les-incontournables/la-plage-de-morgat/', '2025-09-30', '2025-05-01', 48.2271, -4.5007, 2[*]' );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Raglan, Waikato, Nouvelle-Zélande', 4, 'Raglan', 'https://www.hamiltonwaikato.com/destinations/raglan/surfing-in-raglan/', '2026-02-28', '2025-11-01', -37.8275, 174.8077, 3 );\000d\000a\000d\000aINSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES \000d\000a( 'Plage de Capbreton, 40130 Capbreton, France', 3, 'Capbreton', 'https://www.capbreton-tourisme.com/fr/mes-experiences/activites-nautiques/le-surf-a-capbreton/', '2025-10-31', '2025-05-01', 43.6542, -1.4473, 2 )"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Crozon-Morgat, 29160 Crozon, France', 2, 'Morgat', 'https://www.crozon-tourisme.bzh/decouvrir/les-incontournables/la-plage-de-morgat/', '2025-09-30', '2025-05-01', 48.2271, -4.5007, 2' );
+
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Raglan, Waikato, Nouvelle-Zélande', 4, 'Raglan', 'https://www.hamiltonwaikato.com/destinations/raglan/surfing-in-raglan/', '2026-02-28', '2025-11-01', -37.8275, 174.8077, 3 );
+
+INSERT INTO SURF_SPOT (ADDRESS, DIFFICULTY_LEVEL, NAME, PHOTO_URL, SEASON_END, SEASON_START, LATITUDE, LONGITUDE, SURF_BREAK) VALUES 
+( 'Plage de Capbreton, 40130 Capbreton, France', 3, 'Capbreton', 'https://www.capbreton-tourisme.com/fr/mes-experiences/activites-nautiques/le-surf-a-capbreton/', '2025-10-31', '2025-05-01', 43.6542, -1.4473, 2 ) [42001-232]

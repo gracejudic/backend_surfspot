@@ -18,26 +18,30 @@ public class SurfSpot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String name;
-    private String adress;
+    private String address;
     private int difficultyLevel;
     private SurfBreak surfBreak;
     private String photoUrl;
     private Date seasonStart;
     private Date seasonEnd;
+    private double longitude;
+    private double latitude;
     
     public SurfSpot() {
         // Constructeur par défaut requis par JPA
     }
 
-    public SurfSpot(long Id, String name, String adress, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd) {
+    public SurfSpot(long Id, String name, String address, int difficultyLevel, SurfBreak surfBreak, String photoUrl, Date seasonStart, Date seasonEnd, double longitude, double latitude) {
         this.Id = Id;
         this.name = name;
-        this.adress= adress;
+        this.address= address;
         this.difficultyLevel = difficultyLevel;
         this.surfBreak = surfBreak;
         this.photoUrl = photoUrl;
         this.seasonStart = seasonStart;
         this.seasonEnd = seasonEnd;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
     public long getId() {
@@ -56,12 +60,12 @@ public class SurfSpot {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getDifficultyLevel() {
@@ -102,6 +106,22 @@ public class SurfSpot {
 
     public void setSeasonEnd(Date seasonEnd) {
         this.seasonEnd = seasonEnd;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
 
